@@ -8,6 +8,8 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.mynotes.logapps.animationcircletest.utils.Utils;
+
 public class CircleTextView extends TextView {
 
     private static final int START_ANGLE_POINT = 270;
@@ -20,7 +22,7 @@ public class CircleTextView extends TextView {
     public CircleTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        final int strokeWidth = 8;
+        final int strokeWidth =  Utils.pxFromDp(getContext(),2);
 
         paint = new Paint();
         paint.setAntiAlias(true);
@@ -30,7 +32,8 @@ public class CircleTextView extends TextView {
         paint.setColor(Color.YELLOW);
 
         //size 200x200 example
-        rect = new RectF(strokeWidth, strokeWidth, 60 + strokeWidth, 60 + strokeWidth);
+        rect = new RectF(strokeWidth, strokeWidth,  Utils.pxFromDp(getContext(),27) +
+                strokeWidth, Utils.pxFromDp(getContext(),27) + strokeWidth);
 
         //Initial Angle (optional, it can be zero)
         angle = 0;
