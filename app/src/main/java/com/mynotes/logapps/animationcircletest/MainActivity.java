@@ -67,7 +67,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 view.setVisibility(View.GONE);
-                context.startActivity(new Intent(context, SplashActivity.class));
+                Intent intent = new Intent(context, SplashActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
             }
 
             @Override
